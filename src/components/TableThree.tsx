@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../api/user/user.api";
 import { FaRegEdit } from "react-icons/fa";
+import { Modal } from "antd";
 
 const TableThree = () => {
   const [users, setUsers] = useState([])
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   useEffect(() => {
     async  function  fetchData () {
       const data = await getUsers()
@@ -15,7 +18,7 @@ const TableThree = () => {
   },[])
 
 const handleWatch = () => {
-  alert('Watch')
+  setIsModalOpen(true);
 }
 
 const handleRemote = () => {
@@ -25,6 +28,14 @@ const handleRemote = () => {
 const handleEdit = () => {
   alert('Edit')
 }
+
+const handleOk = () => {
+  setIsModalOpen(false);
+};
+
+const handleCancel = () => {
+  setIsModalOpen(false);
+};
 
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
@@ -113,6 +124,11 @@ const handleEdit = () => {
             })}
 
           </tbody>
+          <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+          </Modal>
         </table>
       </div>
     </div>
