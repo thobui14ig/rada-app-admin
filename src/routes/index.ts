@@ -56,6 +56,21 @@ const coreRoutes = [
     title: 'Buttons',
     component: Buttons,
   },
+  {
+    path: '/order/waiting',
+    title: 'Đơn hàng',
+    component: Tables,
+  },
+  {
+    path: '/order/processing',
+    title: 'Đơn hàng đang thực hiện',
+    component: Tables,
+  },
+  {
+    path: '/order/completed',
+    title: 'Đơn hàng đã hoàn tất',
+    component: Tables,
+  },
 ];
 
 const routes = [...coreRoutes];
