@@ -1,5 +1,5 @@
 {
-  "name": "tailadmin-react-free",
+  "name": "TailAdmin",
   "private": true,
   "version": "1.0.5",
   "type": "module",
@@ -14,6 +14,7 @@
     "url": "https://tailadmin.com"
   },
   "dependencies": {
+    "@tanstack/react-table": "^8.9.3",
     "@windmill/react-ui": "^0.6.0",
     "angular": "^1.6.10",
     "antd": "^5.8.2",
@@ -31,7 +32,9 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.2",
+    "react-table": "^7.8.0",
     "react-toastify": "^9.1.3",
+    "socket.io-client": "^4.7.2",
     "sort-by": "^0.0.2",
     "windmill": "^0.1.3"
   },

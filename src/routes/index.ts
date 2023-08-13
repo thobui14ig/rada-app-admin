@@ -9,6 +9,10 @@ const Settings = lazy(() => import('../pages/Settings'));
 const Tables = lazy(() => import('../pages/Tables'));
 const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
+const OrderWaiting = lazy(() => import('../pages/Order/OrderWaiting'));
+const OrderProcessing = lazy(() => import('../pages/Order/OrderProcessing'));
+const OrderCompleted = lazy(() => import('../pages/Order/OrderCompleted'));
+
 
 const coreRoutes = [
   {
@@ -59,17 +63,17 @@ const coreRoutes = [
   {
     path: '/order/waiting',
     title: 'Đơn hàng',
-    component: Tables,
+    component: OrderWaiting,
   },
   {
     path: '/order/processing',
     title: 'Đơn hàng đang thực hiện',
-    component: Tables,
+    component: OrderProcessing,
   },
   {
     path: '/order/completed',
     title: 'Đơn hàng đã hoàn tất',
-    component: Tables,
+    component: OrderCompleted,
   },
 ];
 

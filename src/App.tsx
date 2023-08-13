@@ -1,11 +1,11 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { Route, Routes } from 'react-router-dom';
 
-import ECommerce from './pages/Dashboard/ECommerce';
+import Loader from './common/Loader';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
-import Loader from './common/Loader';
+import ECommerce from './pages/Dashboard/ECommerce';
 import routes from './routes';
 
 const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
@@ -28,9 +28,10 @@ function App() {
         <Route path="/auth/signup" element={<SignUp />} />
         <Route element={<DefaultLayout />}>
           <Route index element={<ECommerce />} />
-          {routes.map(({ path, component: Component }) => (
+          {routes.map(({ path, component: Component }, index: number) => (
             <Route
               path={path}
+              key={index}
               element={
                 <Suspense fallback={<Loader />}>
                   <Component />
